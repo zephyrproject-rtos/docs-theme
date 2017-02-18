@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+/*
+  This file is stripped down and modified to reflect a design with persistent
+  sidebar before content.
+*/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+.container {
+  max-width: 68em;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+.container::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.one-sidebar.sidebar-first #content {
+  width: 100%;
+}
+@media screen and (min-width: 45em) {
+  .one-sidebar.sidebar-first #content {
+    float: left;
+    display: block;
+    width: 73%;
+    margin-left: 2%;
+  }
+}
+
+#sidebar-first {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 45em) {
+  #sidebar-first {
+    float: left;
+    display: block;
+    width: 25%;
+  }
+}
+
+#footer {
+  float: none;
+  clear: both;
+}
+
+#header,
+#footer,
+.mission,
+.breadcrumb,
+.node {
+  clear: both;
+}
+
+.inner {
+  padding: 0;
+}
+
+/*# sourceMappingURL=layout.css.map */

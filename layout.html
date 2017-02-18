@@ -1,8 +1,11 @@
 {# TEMPLATE VAR SETTINGS #}
-{%- set css_files = css_files + ['/sites/all/themes/custom/zephyr_theme/css/main.css'] %}
-{%- set script_files = script_files + ['/sites/all/themes/custom/zephyr_theme/js/app.js'] %}
-{%- set script_files = script_files + ['/sites/all/themes/custom/zephyr_theme/js/vendor/affix.js'] %}
-{%- set script_files = script_files + ['/sites/all/themes/custom/zephyr_theme/js/vendor/dropdown.js'] %}
+{%- set css_files = css_files + ['_static/css/normalize.css'] %}
+{%- set css_files = css_files + ['_static/css/layout.css'] %}
+{%- set css_files = css_files + ['_static/css/main.css'] %}
+{%- set css_files = css_files + ['_static/css/custom.css'] %}
+{%- set script_files = script_files + ['_static/js/main.js'] %}
+{%- set script_files = script_files + ['_static/js/app.js'] %}
+{%- set script_files = script_files + ['_static/js/affix.js'] %}
 {%- set url_root = pathto('', 1) %}
 {%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
 {%- if not embedded and docstitle %}
@@ -13,128 +16,124 @@
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> 
+<!--[if gt IE 8]><!-->
 <html class="no-js" lang="en" > <!--<![endif]-->
   <head>
-    <link rel="apple-touch-icon" sizes="57x57" href="/sites/all/themes/custom/zephyr_theme/images/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/sites/all/themes/custom/zephyr_theme/images/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/sites/all/themes/custom/zephyr_theme/images /apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/sites/all/themes/custom/zephyr_theme/images/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/sites/all/themes/custom/zephyr_theme/images/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/sites/all/themes/custom/zephyr_theme/images/apple-touch-icon-120x120.png">
-    <link rel="icon" type="image/png" href="/sites/all/themes/custom/zephyr_theme/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/sites/all/themes/custom/zephyr_theme/images/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/sites/all/themes/custom/zephyr_theme/images/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/sites/all/themes/custom/zephyr_theme/manifest.json">
-    <link rel="mask-icon" href="/sites/all/themes/custom/zephyr_theme/images/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ pathto('_static/img/', 1) }}apple-touch-icon-57x57.png', 1) }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ pathto('_static/img/apple-touch-icon-60x60.png', 1) }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ pathto('_static/img/apple-touch-icon-72x72.png', 1) }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ pathto('_static/img/apple-touch-icon-76x76.png', 1) }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ pathto('_static/img/apple-touch-icon-114x114.png', 1) }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ pathto('_static/img/apple-touch-icon-120x120.png', 1) }}">
+    <link rel="icon" type="image/png" href="{{ pathto('_static/img/favicon-32x32.png', 1) }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ pathto('_static/img/favicon-96x96.png', 1) }}" sizes="96x96">
+    <link rel="icon" type="image/png" href="{{ pathto('_static/img/favicon-16x16.png', 1) }}" sizes="16x16">
+    <link rel="manifest" href="{{ pathto('_static/manifest.json', 1) }}">
     <meta name="apple-mobile-web-app-title" content="Zephyr Project">
     <meta name="application-name" content="Zephyr Project">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">     
-  
+    <meta name="theme-color" content="#ffffff">
+
     <meta charset="utf-8">
     {{ metatags }}
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     {% block htmltitle %}
     <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
     {% endblock %}
 
-  {# FAVICON #}
-  {% if favicon %}
-    <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
-  {% endif %}
-
-  {# CSS #}
-
-  {# OPENSEARCH #}
-  {% if not embedded %}
-    {% if use_opensearch %}
-      <link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}"/>
+    {# FAVICON #}
+    {% if favicon %}
+      <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
     {% endif %}
 
-  {% endif %}
+    {# CSS #}
 
-  {# RTD hosts this file, so just load on non RTD builds #}
-  {% if not READTHEDOCS %}
-    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-  {% endif %}
+    {# OPENSEARCH #}
+    {% if not embedded %}
+      {% if use_opensearch %}
+        <link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}"/>
+      {% endif %}
+    {% endif %}
 
-  {% for cssfile in css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
-  {% endfor %}
+    {# RTD hosts this file, so just load on non RTD builds #}
+    {% if not READTHEDOCS %}
+      <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+    {% endif %}
 
-  {% for cssfile in extra_css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
-  {% endfor %}
+    {% for cssfile in css_files %}
+      <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+    {% endfor %}
+
+    {% for cssfile in extra_css_files %}
+      <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+    {% endfor %}
 
     <link rel="stylesheet" href="{{ pathto('_static/css/overrides.css', 1) }}" type="text/css" />
-  {%- block linktags %}
-    {%- if hasdoc('about') %}
-        <link rel="author" title="{{ _('About these documents') }}"
-              href="{{ pathto('about') }}"/>
-    {%- endif %}
-    {%- if hasdoc('genindex') %}
-        <link rel="index" title="{{ _('Index') }}"
-              href="{{ pathto('genindex') }}"/>
-    {%- endif %}
-    {%- if hasdoc('search') %}
-        <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}"/>
-    {%- endif %}
-    {%- if hasdoc('copyright') %}
-        <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}"/>
-    {%- endif %}
-    <link rel="top" title="{{ docstitle|e }}" href="{{ pathto('index') }}"/>
-    {%- if parents %}
-        <link rel="up" title="{{ parents[-1].title|striptags|e }}" href="{{ parents[-1].link|e }}"/>
-    {%- endif %}
-    {%- if next %}
-        <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}"/>
-    {%- endif %}
-    {%- if prev %}
-        <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}"/>
-    {%- endif %}
-  {%- endblock %}
-  {%- block extrahead %} {% endblock %}
 
-  {# Keep modernizr in head - http://modernizr.com/docs/#installing #}
+    {%- block linktags %}
+      {%- if hasdoc('about') %}
+        <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}"/>
+      {%- endif %}
+      {%- if hasdoc('genindex') %}
+        <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}"/>
+      {%- endif %}
+      {%- if hasdoc('search') %}
+        <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}"/>
+      {%- endif %}
+      {%- if hasdoc('copyright') %}
+        <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}"/>
+      {%- endif %}
+      <link rel="top" title="{{ docstitle|e }}" href="{{ pathto('index') }}"/>
+      {%- if parents %}
+        <link rel="up" title="{{ parents[-1].title|striptags|e }}" href="{{ parents[-1].link|e }}"/>
+      {%- endif %}
+      {%- if next %}
+        <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}"/>
+      {%- endif %}
+      {%- if prev %}
+        <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}"/>
+      {%- endif %}
+    {%- endblock %}
+
+    {%- block extrahead %} {% endblock %}
+
+    {# Keep modernizr in head - http://modernizr.com/docs/#installing #}
     <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
 
   </head>
 
-  <body class="not-front page-documentation" role="document" >
-    <div id="wrapper">
+  <body class="not-front page-documentation one-sidebar sidebar-first" role="document" >
+    <div id="page">
       {% include "header.html" %}
-      <!-- STARTS MAIN CONTENT -->
-      <div id="main-content">
-        {% include "breadcrumbs.html" %}
-        <!-- STARTS CONTAINER -->
-        <div class="container">
-          <!-- STARTS .content -->
-          <div id="content" class="row">
+      <!-- STARTS #main -->
+      <div id="main">
+        <!-- STARTS .main-container -->
+        <div class="main-container">
+          <aside id="sidebar-first" class="container-sidebar">
             {# SIDE NAV, TOGGLES ON MOBILE #}
             {% include "sidebar.html" %}
-
-            <div class="col-xs-12 col-sm-9">
-              {# PAGE CONTENT #}
-              <div class="">
-                <div class="rst-content">
-                  <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-                   <div itemprop="articleBody">
-                    {% block body %}{% endblock %}
-                   </div>
-                  </div>
-                  <!-- {% include "navigation.html" %}  for ZEP-463 remove the prev/next links -->
+          </aside>
+          <!-- STARTS .content SECTION-->
+          <section id="content" class="row">
+            {# PAGE CONTENT #}
+            <div class="rst-content">
+              <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                <div itemprop="articleBody">
+                  {% block body %}{% endblock %}
                 </div>
               </div>
+              <!-- {% include "navigation.html" %}  for ZEP-463 remove the prev/next links -->
             </div>
-            <!-- ENDS CONTENT SECTION -->
-          </div>
+            <!-- ENDS #content SECTION -->
+          </section>
           <!-- ENDS .content -->
         </div>
-      </div> 
+        <!-- ENDS .main-container -->
+      </div>
+      <!-- ENDS #main -->
       {% include "footer.html" %}
     </div>
-    <!-- ENDS #wrapper -->
+    <!-- ENDS #page -->
 
   {% if not embedded %}
 

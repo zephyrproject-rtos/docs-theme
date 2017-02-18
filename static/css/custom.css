@@ -1,0 +1,111 @@
+#header #logo img {
+  width: auto;
+}
+
+.page-documentation .docs-menu a {
+  display: block;
+  font-weight: normal;
+  color: #000;
+}
+
+.page-documentation .docs-menu .toctree-l1 > a.reference.internal::before {
+  content: '\f0da';
+  color: #ba6de8;
+}
+
+.page-documentation .docs-menu .toctree-l1.current > a.reference.internal::before {
+  content: '\f0d7';
+}
+
+.page-documentation .docs-menu .toctree-l3 a.current {
+  text-decoration: underline;
+}
+
+.toctree-l2 ul {
+    position: relative;
+}
+
+.toctree-l2 ul:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 35px;
+    height: 100%;
+    border-left: 2px solid #ba6de8;
+}
+
+/*
+target page title {
+  adjust margin top/margin bottom
+  margin-left: -53.84%;
+  text-align: center;
+}
+ */
+
+
+/*
+Testing sidebar toggle styles
+ */
+
+ .region-sidebar {
+   display: none;
+ }
+ /* line 10, ../scss/partials/_sidebar.scss */
+ .-expanded-submenu .region-sidebar {
+   display: block;
+   height: auto;
+   transition: all;
+ }
+
+ /* line 16, ../scss/partials/_sidebar.scss */
+ .-expanded-submenu #secondary-menu-button {
+   display: block;
+ }
+ /* line 18, ../scss/partials/_sidebar.scss */
+ .-expanded-submenu #secondary-menu-button::after {
+   font-family: 'FontAwesome';
+   content: "" !important;
+   color: #919196;
+ }
+
+ @media screen and (min-width: 45em) {
+   /* Always show sidebar if we are not on mobile */
+   .region-sidebar {
+     display: block;
+   }
+ }
+
+
+ /* line 76, ../scss/partials/_sidebar.scss */
+ #secondary-menu-button {
+   display: block;
+   cursor: pointer;
+   font-size: 2rem;
+   margin-bottom: 1.25;
+ }
+ /* line 81, ../scss/partials/_sidebar.scss */
+ #secondary-menu-button::after {
+   font-size: 1em;
+   font-family: 'FontAwesome';
+   content: "";
+   float: right;
+   color: #919196;
+ }
+
+@media screen and (min-width: 45em) {
+  #secondary-menu-button {
+    cursor: initial;
+    visibility: hidden;
+    white-space: nowrap;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    line-height: initial;
+  }
+
+  /* line 91, ../scss/partials/_sidebar.scss */
+  #secondary-menu-button::after {
+    content: none !important;
+  }
+}
