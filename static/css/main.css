@@ -3063,6 +3063,10 @@ html {
   box-sizing: inherit;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
@@ -3109,7 +3113,7 @@ pre {
   padding: 1rem;
   word-break: break-all;
   word-wrap: break-word;
-  white-space: pre-wrap;
+  white-space: pre;
   background-color: #a4e0f2;
 }
 pre.inline {
@@ -7047,6 +7051,11 @@ body.page-downloads .view.view-display-id-block_3 {
 }
 body.page-downloads .view.view-display-id-block_3 .views-row {
   margin-bottom: 1rem;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 body.front::before,
