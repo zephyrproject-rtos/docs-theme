@@ -3071,9 +3071,9 @@ body {
   margin: 0;
   overflow-x: hidden;
   font-size: 16px;
-  line-height: 1.5em;
+  /* line-height: 1.5em;  dbk */
   font-family: "IntelClear-Regular", "ClearSans-Regular", Helvetica, "Helvetica Neue", verdana, sans-serif;
-  letter-spacing: 0.03em;
+  /* letter-spacing: 0.03em;  dbk */
   color: #3b404c;
 }
 
@@ -7723,6 +7723,8 @@ LF Collaborative Projects Header and Footer
 #header #navigation .header-menu {
   margin: 0;
   padding: 0;
+  line-height: 1.5em;  /* dbk keep menu with expanded line height */
+  letter-spacing: 0.03em;  /* dbk ... and letter-spacing */
 }
 #header #navigation .header-menu a {
   display: block;
