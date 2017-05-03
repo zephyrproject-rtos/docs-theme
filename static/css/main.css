@@ -6433,16 +6433,16 @@ a {
   font-weight: bold;
 }
 a:link {
-  color: #ba6de8;
+  color: #0070C5;  /* dbk blue instead of purple ba6de8; */
 }
 a:visited {
-  color: #ba6de8;
+  color: #0070C5;  /* dbk blue instead of purple ba6de8; */
 }
 a:hover, a:focus {
-  color: #9454db;
+  color: #338DD1;  /* dbk light-blue instead of purple 9454db; */
 }
 a:active {
-  color: #9454db;
+  color: #338DD1;  /* dbk light-blue instead of purple 9454db; */
 }
 
 div.caption-inner,
