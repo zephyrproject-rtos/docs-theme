@@ -6430,7 +6430,7 @@ html {
 
 a {
   text-decoration: none;
-  font-weight: bold;
+  /* font-weight: bold;  dbk: regular weight, not bold */
 }
 a:link {
   color: #0070C5;  /* dbk blue instead of purple ba6de8; */
