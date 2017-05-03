@@ -3103,7 +3103,7 @@ tr.odd {
 }
 
 pre, code, tt {
-  font: 1em "andale mono", "lucida console", monospace;
+  font: 0.9em "andale mono", "lucida console", monospace;  /* dbk slightly smaller (1em) */
   line-height: 1.5;
 }
 
@@ -3114,7 +3114,7 @@ pre {
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre;
-  background-color: #F0F0F0;  /* dbk light gray not blue background a4e0f2; */
+  background-color: #F8F8F8;  /* dbk light gray not blue background a4e0f2; */
 }
 pre.inline {
   display: inline;
