@@ -10,7 +10,7 @@
 
 .page-documentation .docs-menu .toctree-l1 > a.reference.internal::before {
   content: '\f0da';
-  color: #ba6de8;
+  color: #0070C5;     /* dbk blue not purple triangles ba6de8; */
 }
 
 .page-documentation .docs-menu .toctree-l1.current > a.reference.internal::before {
@@ -32,7 +32,7 @@
     top: 0;
     left: 35px;
     height: 100%;
-    border-left: 2px solid #ba6de8;
+    border-left: 2px solid #0070C5;   /* dbk blue not purple ba6de8; */
 }
 
 /*
