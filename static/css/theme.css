@@ -3038,9 +3038,11 @@ code.code-large, .rst-content tt.code-large {
   line-height: 24px;
   margin-bottom: 24px;
 }
-.wy-plain-list-decimal li, .rst-content .section ol li, .rst-content ol.arabic li, article ol li {
+.wy-plain-list-decimal li, .rst-content .section ol > li, .rst-content
+ol.arabic > li, article ol > li {  /* dbk li only within an ol (not with a ul parent) */
   list-style: decimal;
   margin-left: 24px;
+  margin-bottom: 12px;  /* dbk add a bottom margin to ol list items */
 }
 .wy-plain-list-decimal li p:last-child, .rst-content .section ol li p:last-child, .rst-content ol.arabic li p:last-child, article ol li p:last-child {
   margin-bottom: 0;
