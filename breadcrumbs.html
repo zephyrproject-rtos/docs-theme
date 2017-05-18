@@ -6,12 +6,20 @@
 {% set suffix = source_suffix %}
 {% endif %}
 
+<!-- {{ docs_title }} -->
+
+{# parameterize default name "Docs" in breadcrumb via docs_title in conf.py #}
+{% if not docs_title %}
+{% set docs_title = "Docs" %}
+{% endif %}
+
+
 <div id="breadcrumb">
   <div class="container">
     <a href="/">Home</a> / 
-    <a href="{{ pathto(master_doc) }}">Docs</a> / 
+    <a href="{{ pathto(master_doc) }}">{{ docs_title }}</a> /
       {% for doc in parents %}
-          <a href="{{ doc.link|e }}">{{ doc.title }}</a> / 
+          <a href="{{ doc.link|e }}">{{ doc.title }}</a> /
       {% endfor %}
   </div>
 </div>
