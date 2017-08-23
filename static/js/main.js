@@ -1,4 +1,4 @@
-$(window).load(function () {
+$(window).on("load",function () {
   // Execute code once the window is fully loaded.
 
   // Open and close nav menu with class
