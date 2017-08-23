@@ -23,8 +23,8 @@
   <noscript>
   <div id="fallback" class="admonition warning">
     <p class="last">
-      {% trans %}Please activate JavaScript to enable the search
-      functionality.{% endtrans %}
+      {% trans %}Please activate JavaScript in your browser to enable
+      search functionality.{% endtrans %}
     </p>
   </div>
   </noscript>
@@ -32,7 +32,7 @@
   {% if search_performed %}
     <h2>{{ _('Search Results') }}</h2>
     {% if not search_results %}
-      <p>{{ _('Your search did not match any documents. Please make sure that all words are spelled correctly and that you\'ve selected enough categories.') }}</p>
+      <p>{{ _('Sorry, your search did not match any documents. Please make sure that all words are spelled correctly, try different words, or remove some words and search again.') }}</p>
     {% endif %}
   {% endif %}
   <div id="search-results">
