@@ -8,7 +8,7 @@
 /* adjust title link target locations so they're not hidden behind the
  * fixed header - dbk
  */
-div.section[id], span[id] {
+div.section[id], span[id], dt[id] {
   display: block;
   padding-top: 100px;
   margin-top: -100px;
@@ -4246,6 +4246,27 @@ footer span.commit code, footer span.commit .rst-content tt, .rst-content footer
 .rst-content dl {
   margin-bottom: 24px;
 }
+
+/* dbk tweak for doxygen-generated API headings */
+.rst-content dl.group>dt, .rst-content dl.group>dd>p {
+   display:none !important;
+}
+.rst-content dl.group {
+  margin: 0 0 12px 0px;
+}
+.rst-content dl.group>dd {
+  margin-left: 0  !important;
+}
+.rst-content p.breathe-sectiondef-title {
+  text-decoration: underline;  /* dbk for API sub-headings */
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.rst-content div.breathe-sectiondef {
+  padding-left: 0 !important;
+}
+
 .rst-content dl dt {
   font-weight: bold;
 }
