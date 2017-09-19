@@ -5,15 +5,6 @@
   box-sizing: border-box;
 }
 
-/* adjust title link target locations so they're not hidden behind the
- * fixed header - dbk
- */
-div.section[id], span[id], dt[id] {
-  display: block;
-  padding-top: 100px;
-  margin-top: -100px;
-}
-
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   display: block;
 }
