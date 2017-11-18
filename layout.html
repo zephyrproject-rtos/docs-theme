@@ -115,6 +115,11 @@
           <!-- STARTS .content SECTION-->
           <section id="content" class="row">
             {# PAGE CONTENT #}
+	    {% if is_release %}
+	    <div class="wy-alert wy-alert-danger">
+		    This is an old version of the documentation ({{ version }})! <a href="/{{ pagename }}.html">Click here to read the latest version (master)</a>.
+	    </div>
+	    {% endif %}
             <div class="rst-content">
               <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
                 <div itemprop="articleBody">
