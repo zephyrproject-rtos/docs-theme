@@ -117,7 +117,8 @@
             {# PAGE CONTENT #}
 	    {% if is_release %}
 	    <div class="wy-alert wy-alert-danger">
-		    This is an old version of the documentation ({{ version }})! <a href="/{{ pagename }}.html">Click here to read the latest version (master)</a>.
+		    This is archived documentation for Zephyr version {{ version }}, and not
+                    <a href="/{{ pagename }}.html">the latest (master) documentation</a>.
 	    </div>
 	    {% endif %}
             <div class="rst-content">
